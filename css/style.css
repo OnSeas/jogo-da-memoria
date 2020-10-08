@@ -15,12 +15,17 @@ body{
     background-color: #555;
 }
 
+/* ------ Tela de jogo ------ */
+
 .memory-game{
     height: 640px;
     width: 840px;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
+
+    /* --Perspeciva aumenta os efeitos 3d-- */
+    perspective: 1000px;
 }
 
 /* ------ Estilização das cartas ------ */
@@ -35,6 +40,11 @@ body{
 
     cursor: pointer;
     transform: scale(1);
+
+    /* Não deixa o elemento achatado no plano (tela) */
+    transform-style: preserve-3d;
+
+    transition: transform 0.9s;
 }
 
 .card:active{
@@ -48,4 +58,17 @@ body{
     width: 100%;
     position: absolute;
     border-radius: 5px;
+
+    backface-visibility: hidden;
+    /* Propriedade que tira o verso do elemento */
+}
+
+.card-front{
+    transform: rotateY(180deg);
+}
+
+/* ------ Animação de virar carta ------ */
+
+.card.flip{
+    transform: rotateY(180deg);
 }
