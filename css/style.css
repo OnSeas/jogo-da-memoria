@@ -9,3 +9,31 @@ body{
     display: flex;
     background-color: #555;
 }
+
+.memory-game{
+    height: 640px;
+    width: 840px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card{
+    height: calc(33.333% - 10px);
+    width: calc(25% - 10px);
+    margin: 5px;
+
+    position: relative;
+    box-shadow: 1px 1px 1px rgba(1, 1, 1, 0.3);
+
+    cursor: pointer;
+    transform: scale(1);
+}
+
+.card-front,
+.card-verse{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border-radius: 5px;
+}
