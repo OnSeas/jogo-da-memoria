@@ -1,5 +1,7 @@
 /* Feito por Osmar Januario de souza Neto */
 
+
+// Variáveis
 const cards = document.querySelectorAll('.card');
 let HasFlippedCard = false;
 let FirstCard, SecondCard;
@@ -59,6 +61,15 @@ function FlipCard() {
     CheckForMatch();
     HasFlippedCard = false;
 }
+
+// Função que embaralha as cartas
+(function Shuffle() {
+    cards.forEach((card) => {
+        let RandomPosition = Math.floor(Math.random() * 12);
+        card.style.order = RandomPosition;
+    })
+})(); /* immediately invoked function: função dentro do parentese, com parenteses de função na frente, 
+sendo chamada toda vez que o código começa. */
 
 // Percorre o array cards que contém todos os cards vendo qual foi clicado.
 cards.forEach((card) => {
