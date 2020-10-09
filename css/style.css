@@ -65,6 +65,8 @@ body{
 
 .card-front{
     transform: rotateY(180deg);
+    padding: 4px;
+    background-color: #000;
 }
 
 /* ------ Animação de virar carta ------ */
