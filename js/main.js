@@ -5,10 +5,18 @@ let HasFlippedCard = false;
 let FirstCard, SecondCard;
 let LockBoard = false;
 
+// Função que reseta variáveis
+function ResetBoard() {
+    [HasFlippedCard, LockBoard] = [false, false];
+    [FirstCard, SecondCard] = [null, null];
+}
+
 // Função que desabilita cards.
 function DisableCards() {
     FirstCard.removeEventListener('click', FlipCard);
     SecondCard.removeEventListener('click', FlipCard);
+
+    ResetBoard();
 }
 
 // Função que Desvira cards.
@@ -19,7 +27,7 @@ function UnflipCards() {
         FirstCard.classList.remove('flip');
         SecondCard.classList.remove('flip');
 
-        LockBoard = false;
+        ResetBoard();
     }, 1500);
 }
 
