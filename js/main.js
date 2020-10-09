@@ -6,12 +6,16 @@ let FirstCard, SecondCard;
 
 // Função que desabilita cards.
 function DisableCards() {
-    
+    FirstCard.removeEventListener('click', FlipCard);
+    SecondCard.removeEventListener('click', FlipCard);
 }
 
 // Função que Desvira cards.
 function UnflipCards() {
-
+    setTimeout(() => {
+        FirstCard.classList.remove('flip');
+        SecondCard.classList.remove('flip');
+    }, 1000);
 }
 
 // Função que verifica se há match entre as cartas.
